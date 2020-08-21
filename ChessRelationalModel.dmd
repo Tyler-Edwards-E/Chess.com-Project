@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ChessRelationalModel" id="44F03525-8EC5-9FF7-A9CF-399DD3E61B2D" version="3.5">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:44:20 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>44F03525-8EC5-9FF7-A9CF-399DD3E61B2D</designId>
+</OSDM_Design>
