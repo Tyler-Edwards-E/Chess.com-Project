@@ -21,6 +21,7 @@ Everything related to the web scraping and data collection is in the "ChessScrap
 
 **ChessTableGeneration.ddl** : SQL tables generated from **ChessRelationalModel.dmd**.
 
+-----------------------------------------------------------------------
 
 ###### WORK IN PROGRESS
 - Finish user profiles spider (+ Collect list of Chess.com usernames)
