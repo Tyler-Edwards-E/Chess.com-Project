@@ -25,7 +25,7 @@ class ChessSpider2Spider(scrapy.Spider):
 
     def parse(self, response):
 
-            HTML = "[Chess.com]--User-Profile.html"
+            HTML = "[Chess.com]--User-Profile-1.html"
             with open(HTML, 'wb') as h2:
                 h2.write(response.body)
 
@@ -82,22 +82,108 @@ class ChessSpider2Spider(scrapy.Spider):
             else:
                 city = ""
 
+            item = {
+                    'Username': username,
+                    'Legal_Name': fullName,
+                    'Title': title,
+                    'Diamond_Member': diamond,
+                    'Country': country,
+                    'City': city
+                        }
+
+            stats_link = "https://www.chess.com/stats/live/blitz/" + username
+
+            yield scrapy.Request(response.urljoin(stats_link), dont_filter=True, meta = {'item' : item }, callback= self.stats_page)
+
+    def stats_page(self, response): # Game stats page
+
+            HTML = "[Chess.com]--User-Profile-2.html"
+            with open(HTML, 'wb') as h2:
+                h2.write(response.body)
+
+            item = response.meta.get('item', {})
+
+            gametypes1 = response.xpath('.//li[contains(@class, "section-clickable clickable-rating")]/a/@title').getall()
+            gametypes1 = [x.strip() for x in gametypes1]
+
+            gametypes2 = response.xpath('.//li[contains(@class, "section-clickable clickable-rating  disable")]/span/h3/text()').getall()
+            gametypes2 = [x.strip() for x in gametypes2]
+            gametypes2.remove('')
+            gametypes2.remove('')
+            gametypes2.remove('')
+            gametypes2.remove('')
+
+            gametypes22 = response.xpath('.//li[contains(@class, "section-clickable clickable-rating  disable")]/span/h3/span/text()').getall()
+            gametypes22 = [x.strip() for x in gametypes22]
+
+            gametypesTWO = dict(zip(gametypes2, gametypes22))
+
+            # Fill variables with blanks if the user doesn't play that gametype
+            blitz = ""
+            bullet = ""
+            rapid = ""
+            PRush = ""
+            puzzles = ""
+            D960 = ""
+            daily = ""
+            Live960 = ""
+            ThreeCheck = ""
+            KotH = ""
+            Crazy = ""
+
+            for i in gametypes1:
+                if ('Blitz' in i):
+                    blitz = i.split()[1]
+                elif('Bullet' in i):
+                    bullet = i.split()[1]
+                elif('Rapid' in i):
+                    rapid = i.split()[1]
+                elif('Puzzle Rush' in i):
+                    PRush = i.split()[2]
+                elif('Puzzles' in i):
+                    puzzles = i.split()[1]
+                elif('Daily 960' in i):
+                    D960 = i.split()[2]
+                elif('Daily' in i):
+                    daily = i.split()[1]
+
+            if ('Live 960' in gametypesTWO):
+                Live960 = gametypesTWO["Live 960"]
+            if ('3 Check' in gametypesTWO):
+                ThreeCheck = gametypesTWO["3 Check"]
+            if ('King of the Hill' in gametypesTWO):
+                KotH = gametypesTWO['King of the Hill']
+            if ('Crazyhouse' in gametypesTWO):
+                Crazy = gametypesTWO['Crazyhouse']
+
             Date_Collected = time.strftime("%Y-%m-%d")
 
-
-############ Print Test
-
+    ############ Print Test
             print()
             print("========================================================================================================")
             print()
-            print(username)
-            print(fullName)
-            print(title)
-            print(diamond)
-            # print(flag)
-            print(country)
-            # print(location)
-            print(city)
+            print(item['Username'])
+            print(item['Legal_Name'])
+            print(item['Title'])
+            print(item['Diamond_Member'])
+            print(item['Country'])
+            print(item['City'])
+            print(gametypes1)
+            # print(gametypes2)
+            # print(gametypes22)
+            print(gametypesTWO)
+            print()
+            print("Blitz: " + blitz)
+            print("Bullet: " + bullet)
+            print("Rapid: " + rapid)
+            print("Puzzle Rush: " + PRush)
+            print("Puzzles: " + puzzles)
+            print("Daily 960: " + D960)
+            print("Daily: " + daily)
+            print("Live 960: " + Live960)
+            print("3 Check: " + ThreeCheck)
+            print("King of the Hill: " + KotH)
+            print("Crazyhouse: " + Crazy)
             print()
             print("========================================================================================================")
             print()
