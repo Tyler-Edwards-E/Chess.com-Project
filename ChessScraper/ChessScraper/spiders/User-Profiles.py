@@ -11,7 +11,7 @@ class ChessSpider2Spider(scrapy.Spider):
     allowed_domains = ['chess.com']
     rotate_user_agent = True
 
-    username_list = ['hikaru', 'gothamchess', 'lyonbeast']
+    username_list = ['hikaru', 'gothamchess', 'lyonbeast'] # , 'gothamchess', 'lyonbeast'
 
     start_urls=[]
     for i in username_list: # Parses list of usernames above and puts them in the URL
@@ -82,18 +82,50 @@ class ChessSpider2Spider(scrapy.Spider):
             else:
                 city = ""
 
+            profinfo1 = response.xpath('.//div[contains(@class, "profile-info-item-title")]/text()').getall()
+            profinfo2 = response.xpath('.//div[contains(@class, "profile-info-item-value")]/text()').getall()
+            profileINFO = dict(zip(profinfo1, profinfo2))
+            print(profileINFO)
+
+            joined = ''
+            online = ''
+            views = ''
+            followers = ''
+            points = ''
+
+
+            if ("Joined" in profileINFO):
+                joined = profileINFO["Joined"]
+            if ("Last Online" in profileINFO):
+                online = profileINFO["Last Online"]
+            if ("Views" in profileINFO):
+                views = profileINFO["Views"]
+            if ("Followers" in profileINFO):
+                followers = profileINFO["Followers"]
+            if ("Points" in profileINFO):
+                points = profileINFO["Points"]
+
+
             item = {
                     'Username': username,
                     'Legal_Name': fullName,
                     'Title': title,
                     'Diamond_Member': diamond,
                     'Country': country,
-                    'City': city
+                    'City': city,
+                    'P.Test': profileINFO,
+                    'Date_Joined' : joined,
+                    'Last_Online': online,
+                    'Profile_Views': views,
+                    'Followers': followers,
+                    'Points': points,
                         }
 
             stats_link = "https://www.chess.com/stats/live/blitz/" + username
 
             yield scrapy.Request(response.urljoin(stats_link), dont_filter=True, meta = {'item' : item }, callback= self.stats_page)
+
+# ======================================================================================================================================================
 
     def stats_page(self, response): # Game stats page
 
@@ -130,6 +162,7 @@ class ChessSpider2Spider(scrapy.Spider):
             ThreeCheck = ""
             KotH = ""
             Crazy = ""
+            Bughouse = ""
 
             for i in gametypes1:
                 if ('Blitz' in i):
@@ -155,6 +188,8 @@ class ChessSpider2Spider(scrapy.Spider):
                 KotH = gametypesTWO['King of the Hill']
             if ('Crazyhouse' in gametypesTWO):
                 Crazy = gametypesTWO['Crazyhouse']
+            if ('Bughouse' in gametypesTWO):
+                Bughouse = gametypesTWO['Bughouse']
 
             Date_Collected = time.strftime("%Y-%m-%d")
 
@@ -168,6 +203,7 @@ class ChessSpider2Spider(scrapy.Spider):
             print(item['Diamond_Member'])
             print(item['Country'])
             print(item['City'])
+            print()
             print(gametypes1)
             # print(gametypes2)
             # print(gametypes22)
@@ -184,10 +220,18 @@ class ChessSpider2Spider(scrapy.Spider):
             print("3 Check: " + ThreeCheck)
             print("King of the Hill: " + KotH)
             print("Crazyhouse: " + Crazy)
+            print("Bughouse: " + Bughouse)
+            print()
+            print(item['P.Test'])
+            print(item['Date_Joined'])
+            print(item['Last_Online'])
+            print(item['Profile_Views'])
+            print(item['Followers'])
+            print(item['Points'])
             print()
             print("========================================================================================================")
             print()
 
-            item = {
+            item2 = {
             }
-            yield item
+            yield item2
