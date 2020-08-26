@@ -11,7 +11,7 @@ class ChessSpider2Spider(scrapy.Spider):
     allowed_domains = ['chess.com']
     rotate_user_agent = True
 
-    username_list = ['hikaru', 'gothamchess', 'lyonbeast'] # , 'gothamchess', 'lyonbeast'
+    username_list = ['hikaru', 'gothamchess', 'lyonbeast', '0gZPanda', 'papattack', 'Culum2007', 'catsenlo'] # , 'gothamchess', 'lyonbeast'
 
     start_urls=[]
     for i in username_list: # Parses list of usernames above and puts them in the URL
@@ -39,16 +39,17 @@ class ChessSpider2Spider(scrapy.Spider):
 
             location = response.xpath('.//div[contains(@class, "profile-card-info")]/div/text()').getall() # Name, City, Country
             location = [x.strip() for x in location]
-            location.remove('')
-            location.remove('')
-            location.remove('')
+            while ('' in location == True):
+                location.remove('')
+
             # Can't use this list to assign final variables because some users may have only a Country and Name, or Country and City, etc.
 
             title = response.xpath('.//a[contains(@class, "profile-card-chesstitle ")]/text()').extract_first()
             if (title != None):
                 title = title.strip()
 
-            if (response.xpath('.//span[contains(@class, "flair-component flair-diamond_traditional flair-large user-flair-membericon")]/text()').extract_first() != None):
+            if (response.xpath('.//div[contains(@class, "status-label-group")]/text()').extract_first() != None):
+                print(response.xpath('.//div[contains(@class, "status-label-group")]/text()').extract_first())
                 diamond = 1 # Diamond member = Yes
             else:
                 diamond = 0 # Diamond member = Nos
@@ -75,8 +76,13 @@ class ChessSpider2Spider(scrapy.Spider):
             else: # '<div', 'France'
                 country = str(flag[1])
 
-            location.remove(country)
-            location.remove(fullName)
+            if (country in location):
+                location.remove(country)
+            if (fullName in location):
+                location.remove(fullName)
+
+            country = country.replace('&amp;','&') # If there's an & in the country name it appears as '&amp;'
+
             if (location != []):
                 city = str(location[0])
             else:
@@ -85,14 +91,12 @@ class ChessSpider2Spider(scrapy.Spider):
             profinfo1 = response.xpath('.//div[contains(@class, "profile-info-item-title")]/text()').getall()
             profinfo2 = response.xpath('.//div[contains(@class, "profile-info-item-value")]/text()').getall()
             profileINFO = dict(zip(profinfo1, profinfo2))
-            print(profileINFO)
 
             joined = ''
             online = ''
             views = ''
             followers = ''
             points = ''
-
 
             if ("Joined" in profileINFO):
                 joined = profileINFO["Joined"]
@@ -104,7 +108,6 @@ class ChessSpider2Spider(scrapy.Spider):
                 followers = profileINFO["Followers"]
             if ("Points" in profileINFO):
                 points = profileINFO["Points"]
-
 
             item = {
                     'Username': username,
@@ -140,10 +143,9 @@ class ChessSpider2Spider(scrapy.Spider):
 
             gametypes2 = response.xpath('.//li[contains(@class, "section-clickable clickable-rating  disable")]/span/h3/text()').getall()
             gametypes2 = [x.strip() for x in gametypes2]
-            gametypes2.remove('')
-            gametypes2.remove('')
-            gametypes2.remove('')
-            gametypes2.remove('')
+
+            while ('' in gametypes2 == True):
+                gametypes2.remove('')
 
             gametypes22 = response.xpath('.//li[contains(@class, "section-clickable clickable-rating  disable")]/span/h3/span/text()').getall()
             gametypes22 = [x.strip() for x in gametypes22]
@@ -163,6 +165,7 @@ class ChessSpider2Spider(scrapy.Spider):
             KotH = ""
             Crazy = ""
             Bughouse = ""
+            fide = ""
 
             for i in gametypes1:
                 if ('Blitz' in i):
@@ -232,6 +235,18 @@ class ChessSpider2Spider(scrapy.Spider):
             print("========================================================================================================")
             print()
 
-            item2 = {
+            item = {
+            'Username': item['Username'],
+            'Legal_Name': item['Legal_Name'],
+            'Title': item['Title'],
+            'Diamond_Member': item['Diamond_Member'],
+            'Country': item['Country'],
+            'City': item['City'],
+            'P.Test': item['P.Test'],
+            'Date_Joined' : item['Date_Joined'],
+            'Last_Online': item['Last_Online'],
+            'Profile_Views': item['Profile_Views'],
+            'Followers': item['Followers'],
+            'Points': item['Points']
             }
-            yield item2
+            yield item
