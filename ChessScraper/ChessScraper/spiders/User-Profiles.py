@@ -88,26 +88,23 @@ class ChessSpider2Spider(scrapy.Spider):
             else:
                 city = ""
 
-            profinfo1 = response.xpath('.//div[contains(@class, "profile-info-item-title")]/text()').getall()
-            profinfo2 = response.xpath('.//div[contains(@class, "profile-info-item-value")]/text()').getall()
-            profileINFO = dict(zip(profinfo1, profinfo2))
+            profinfo = response.xpath('.//div[contains(@class, "profile-info-item-value")]/text()').getall()
 
             joined = ''
             online = ''
             views = ''
             followers = ''
-            points = ''
+            points = 0
 
-            if ("Joined" in profileINFO):
-                joined = profileINFO["Joined"]
-            if ("Last Online" in profileINFO):
-                online = profileINFO["Last Online"]
-            if ("Views" in profileINFO):
-                views = profileINFO["Views"]
-            if ("Followers" in profileINFO):
-                followers = profileINFO["Followers"]
-            if ("Points" in profileINFO):
-                points = profileINFO["Points"]
+            joined = profinfo[0]
+            views = profinfo[1]
+            followers = profinfo[2]
+            points = profinfo[3]
+
+            online = response.xpath('.//div[contains(@class, "profile-info-item-value")]/span/text()').extract_first()
+            if (online == None):
+                online = "Currently Online"
+            user_link = response.request.url
 
             item = {
                     'Username': username,
@@ -116,12 +113,12 @@ class ChessSpider2Spider(scrapy.Spider):
                     'Diamond_Member': diamond,
                     'Country': country,
                     'City': city,
-                    'P.Test': profileINFO,
                     'Date_Joined' : joined,
                     'Last_Online': online,
                     'Profile_Views': views,
                     'Followers': followers,
                     'Points': points,
+                    'URL': user_link
                         }
 
             stats_link = "https://www.chess.com/stats/live/blitz/" + username
@@ -165,7 +162,7 @@ class ChessSpider2Spider(scrapy.Spider):
             KotH = ""
             Crazy = ""
             Bughouse = ""
-            fide = ""
+            # fide = "" # Not every User has a FIDE rating and it's also not on the stats page so can't grab it with HTML alone
 
             for i in gametypes1:
                 if ('Blitz' in i):
@@ -194,7 +191,8 @@ class ChessSpider2Spider(scrapy.Spider):
             if ('Bughouse' in gametypesTWO):
                 Bughouse = gametypesTWO['Bughouse']
 
-            Date_Collected = time.strftime("%Y-%m-%d")
+            Date_Collected = time.strftime("%Y/%m/%d")
+            Time = time.strftime("%H:%M")
 
     ############ Print Test
             print()
@@ -207,10 +205,10 @@ class ChessSpider2Spider(scrapy.Spider):
             print(item['Country'])
             print(item['City'])
             print()
-            print(gametypes1)
+            # print(gametypes1)
             # print(gametypes2)
             # print(gametypes22)
-            print(gametypesTWO)
+            # print(gametypesTWO)
             print()
             print("Blitz: " + blitz)
             print("Bullet: " + bullet)
@@ -225,13 +223,15 @@ class ChessSpider2Spider(scrapy.Spider):
             print("Crazyhouse: " + Crazy)
             print("Bughouse: " + Bughouse)
             print()
-            print(item['P.Test'])
-            print(item['Date_Joined'])
-            print(item['Last_Online'])
-            print(item['Profile_Views'])
-            print(item['Followers'])
-            print(item['Points'])
+            # print(item['P.Test'])
+            print("Joined: " + item['Date_Joined'])
+            print("Online: " + str(item['Last_Online']))
+            print("Views: " + item['Profile_Views'])
+            print("Followers: " + item['Followers'])
+            print("Points: " + item['Points'])
             print()
+            print(Date_Collected)
+            print(Time)
             print("========================================================================================================")
             print()
 
@@ -242,11 +242,13 @@ class ChessSpider2Spider(scrapy.Spider):
             'Diamond_Member': item['Diamond_Member'],
             'Country': item['Country'],
             'City': item['City'],
-            'P.Test': item['P.Test'],
             'Date_Joined' : item['Date_Joined'],
-            'Last_Online': item['Last_Online'],
             'Profile_Views': item['Profile_Views'],
             'Followers': item['Followers'],
-            'Points': item['Points']
+            'Points': item['Points'],
+            'Points': item['URL'],
+            'Last_Online': item['Last_Online'],
+            'Date_Collected' : Date_Collected,
+            'Time_Collected' : Time
             }
             yield item
