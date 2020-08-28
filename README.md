@@ -24,7 +24,7 @@ Everything related to the web scraping and data collection is in the "ChessScrap
 -----------------------------------------------------------------------
 
 ###### WORK IN PROGRESS
-- [x] Finish user profiles spide
+- [x] Finish user profiles spider
 - [ ] Collect list of Chess.com usernames
 - [ ] Create spider for user matches
 - [ ] Data analysis of user profiles and matches datasets
