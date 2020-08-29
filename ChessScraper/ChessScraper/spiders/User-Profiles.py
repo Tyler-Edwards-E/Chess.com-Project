@@ -6,7 +6,7 @@ import time
 
 # Parse leaderboards and matches for profile likes and post username list here
 
-class ChessSpider2Spider(scrapy.Spider):
+class ChessSpider2(scrapy.Spider):
     name = 'User-Spider'
     allowed_domains = ['chess.com']
     rotate_user_agent = True
