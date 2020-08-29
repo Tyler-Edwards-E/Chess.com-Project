@@ -8,7 +8,7 @@ import time
 # Parse leaderboard pages
 # Parse profiles
 
-class ChessSpider1Spider(scrapy.Spider):
+class ChessSpider1(scrapy.Spider):
     name = 'Leaderboards-Spider'
     allowed_domains = ['chess.com']
     start_urls = ['https://www.chess.com/ratings', 'https://www.chess.com/ratings?page=2', 'https://www.chess.com/ratings?page=3']
