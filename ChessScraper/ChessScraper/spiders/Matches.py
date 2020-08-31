@@ -2,7 +2,7 @@
 import scrapy
 import time
 
-# Chess.com Leaderboards Scraper
+# Chess.com User Matches Scraper
 
 class ChessSpider3(scrapy.Spider):
     name = 'Match-Spider'
