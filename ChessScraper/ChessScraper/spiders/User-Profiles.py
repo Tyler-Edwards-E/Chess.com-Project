@@ -2,9 +2,7 @@
 import scrapy
 import time
 
-# Chess.com Leaderboards Scraper
-
-# Parse leaderboards and matches for profile likes and post username list here
+# Chess.com User Profiles Scraper
 
 class ChessSpider2(scrapy.Spider):
     name = 'User-Spider'
