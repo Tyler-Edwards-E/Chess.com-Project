@@ -22,8 +22,20 @@ class ChessSpider3(scrapy.Spider):
             with open(HTML, 'wb') as h2:
                 h2.write(response.body)
 
+            names = response.xpath('.//a[contains(@class, "v-user-popover")]/text()').getall()
+            names = [x.strip() for x in names]
+
+            formats = response.xpath('.//span[contains(@class, "archive-games-game-time")]/text()').getall()
+            formats = [x.strip() for x in formats]
+
             print()
-            print("Hello")
+            print()
+            print(names)
+            print(len(names))
+            print("=======================================================")
+            print(formats)
+            print(len(formats))
+            print()
             print()
 
             item = {}
