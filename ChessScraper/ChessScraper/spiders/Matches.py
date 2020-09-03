@@ -29,13 +29,20 @@ class ChessSpider3(scrapy.Spider):
             formats = [x.strip() for x in formats]
 
             for match in response.xpath('//tr[contains(@class, "v-board-popover")]'):
-
+                format = match.xpath('.//span[contains(@class, "archive-games-game-time")]/text()').extract_first().strip()
+                name = match.xpath('.//a[contains(@class, "post-view-meta-username v-user-popover")]/text()').getall()
+                name = [x.strip() for x in name]
+                country = match.xpath('.//div[contains(@class, "archive-games-result-wrapper-score")]/div/text()').getall()
+                country = [x.strip() for x in country]
+                # =========================== PRINT TEST ==========================================
                 print()
                 print()
-                print(match)
-                print("=======================================================================================")
-                print(match.xpath('.//span[contains(@class, "archive-games-game-time")]/text()').extract_first().strip()) # Format
-                print(match.xpath('.//a[contains(@class, "post-view-meta-username v-user-popover")]/text()').getall()) # Usernames
+                print("==================================================================================================")
+                # print(match)
+                print(format) # Format
+                print(name) # Usernames
+                print(country)
+                print("==================================================================================================")
                 print()
                 print()
 
