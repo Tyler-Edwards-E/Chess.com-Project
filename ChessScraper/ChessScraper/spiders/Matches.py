@@ -34,6 +34,8 @@ class ChessSpider3(scrapy.Spider):
                 name = [x.strip() for x in name]
                 country = match.xpath('.//div[contains(@class, "archive-games-result-wrapper-score")]/div/text()').getall()
                 country = [x.strip() for x in country]
+                date_played = match.xpath('.//td[contains(@class, "table-text-right archive-games-date-cell")]').extract_first().split()
+                date_played = date_played[-4] + ' ' + date_played[-3] + date_played[-2]
                 # =========================== PRINT TEST ==========================================
                 print()
                 print()
@@ -42,6 +44,7 @@ class ChessSpider3(scrapy.Spider):
                 print(format) # Format
                 print(name) # Usernames
                 print(country)
+                print(date_played)
                 print("==================================================================================================")
                 print()
                 print()
