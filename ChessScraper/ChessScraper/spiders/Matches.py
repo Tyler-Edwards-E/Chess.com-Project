@@ -38,29 +38,56 @@ class ChessSpider3(scrapy.Spider):
                 name = [x.strip() for x in name]
 
                 ratings = match.xpath('.//span[contains(@class, "post-view-meta-rating")]/text()').getall()
+                ratings = [x.strip().replace("(", "").replace(")", "") for x in ratings]
 
                 country = match.xpath('.//div[contains(@class, "post-view-meta-user  ")]/div/@v-tooltip').getall()
-                country = [x.strip() for x in country]
+                country = [x.strip().replace("'", "") for x in country]
 
                 accuracy = match.xpath('.//td[contains(@class, "table-text-center")]/div/text()').getall()
+                if (accuracy == []):
+                    accuracy = ["", ""]
 
                 moves = match.xpath('.//td[contains(@class, "table-text-center")]/span/text()').extract()
-
+                moves = moves[0]
+                
                 date_played = match.xpath('.//td[contains(@class, "table-text-right archive-games-date-cell")]').extract_first().split()
                 date_played = date_played[-4] + ' ' + date_played[-3] + date_played[-2]
+
+                whiteName = name[0]
+                whiteTitle = titles[0]
+                whiteCountry = country[0]
+                whiteRating = ratings[0]
+                whiteAccuracy = accuracy[0]
+
+                blackName = name[1]
+                blackTitle = titles[1]
+                blackCountry = country[1]
+                blackRating = ratings[1]
+                blackAccuracy = accuracy[1]
+
                 # =========================== PRINT TEST ==========================================
                 print()
                 print()
                 print("==================================================================================================")
                 # print(match)
                 print(format) # Format
-                print(titles) ############ Need solution to only one player having a title
-                print(name) # Usernames
-                print(ratings)
-                print(country)
+                # print(titles) ############ Need solution to only one player having a title
+                # print(name) # Usernames
+                # print(ratings)
+                # print(country)
                 print(moves)
-                print(accuracy)
+                # print(accuracy)
                 print(date_played)
+                print("---------------------------------------------------------------------")
+                print(whiteTitle + " " + whiteName)
+                print(whiteCountry)
+                print(whiteRating)
+                print(whiteAccuracy)
+                print()
+                print(blackTitle + " " + blackName)
+                print(blackCountry)
+                print(blackRating)
+                print(blackAccuracy)
                 print("==================================================================================================")
                 print()
                 print()
