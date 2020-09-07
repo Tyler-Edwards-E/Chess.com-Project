@@ -3,10 +3,7 @@ import scrapy
 import time
 
 # Chess.com Leaderboards Scraper
-
-# Parse leaderboard for profile player_links
-# Parse leaderboard pages
-# Parse profiles
+# Collects data on the top Chess players in the world from https://www.chess.com/ratings
 
 class ChessSpider1(scrapy.Spider):
     name = 'Leaderboards-Spider'
@@ -19,7 +16,7 @@ class ChessSpider1(scrapy.Spider):
         print()
 
         # HTML for Debugging
-        HTML = "[Chess.com]--Leaderboards-1.html"
+        HTML = "Leaderboards-1.html"
         with open(HTML, 'wb') as h:
             h.write(response.body)
 
@@ -28,7 +25,7 @@ class ChessSpider1(scrapy.Spider):
         print()
 
         R1 = response.xpath('.//div[contains(@class, "master-players-rating-rank")]/text()').getall()
-        # Save each world rating on the leadboard page because retired players' profiles don't show their world rating anymore
+        # Save each world rating on the leadboard page because "retired" players' profiles don't show their world rating anymore
         R1[:] = [i.strip() for i in R1] # Strip empty space in strings
 
         R2 = response.xpath('//div[contains(@class, "master-players-rating-player-rank")]/text()').getall()
@@ -68,7 +65,7 @@ class ChessSpider1(scrapy.Spider):
     def parse_profile(self, response): # Parse each player profile and create item
 
         # HTML for Debugging
-        HTML2 = "[Chess.com]--Leaderboards-2.html"
+        HTML2 = "Leaderboards-2.html"
         with open(HTML2, 'wb') as h2:
             h2.write(response.body)
 
