@@ -3,13 +3,192 @@ import scrapy
 import time
 
 # Chess.com User Profiles Scraper
+# Collects general data from Chess.com user profiles
 
 class ChessSpider2(scrapy.Spider):
     name = 'User-Spider'
     allowed_domains = ['chess.com']
     rotate_user_agent = True
 
-    username_list = ['hikaru', 'gothamchess', 'lyonbeast', '0gZPanda', 'papattack', 'Culum2007', 'catsenlo'] # , 'gothamchess', 'lyonbeast'
+# Edit this list to collect data on desired Chess.com users
+    username_list = ['GMHikaruOnTwitch',
+'GothamChess',
+'Zablotsky',
+'elisak43',
+'rostovmaxim',
+'DanielNaroditsky',
+'Hikaru',
+'Komodo_Dragaon',
+'Jospem',
+'whodee11',
+'LikeWater',
+'DanielMieles1985',
+'Uih7I9kOKokUOhjUJ',
+'DagurR',
+'theopera',
+'AkibaRubi',
+'Carudi',
+'GM_dmitrij',
+'Onischuk_V',
+'Leon-Black',
+'Guenplen',
+'BilodeauA',
+'Babafingo_321',
+'Izoria123',
+'chessfrendz',
+'Flawless_Fighter',
+'SGchess01',
+'Alexander_Kasparov',
+'GreenyKnight2001',
+'Dracomaniac',
+'gagic233',
+'AmazingChess210',
+'Annawel',
+'LyonBeast',
+'Openyagami',
+'KuzubovYuriy',
+'Twitch_ElhamBlitz05',
+'BlackBoarder',
+'13MiRacLe',
+'Fandorine',
+'PSvidler',
+'youngKID',
+'ChessWarrior7197',
+'Aleksey_Sorokin',
+'bascheyaro',
+'Mikasinski',
+'RaunakSadhwani2005',
+'Kobalia',
+'0gZPanda',
+'exoticprincess',
+'gena217',
+'Mazetovic',
+'diokletian',
+'kuban1991',
+'attack2mateU',
+'NodariousBIG',
+'Sam_ChessMood',
+'OK97',
+'wannabe2700',
+'Hikaru-bot',
+'papattack',
+'ChristopherYoo',
+'Systemcontrol1783',
+'DynamicClaim',
+'Aguiar94',
+'Cryptal',
+'Lucas_Tomiello',
+'Geoff25',
+'JMatias',
+'ArjunGuptaDPS',
+'FLASH44444',
+'FischersFrisoer',
+'oganromchess',
+'friesnielsen2302',
+'elcandado',
+'Sofia_Shkidchenko',
+'HristyanIliev06',
+'Mythili123',
+'agencja-seo',
+'WhitmanChess',
+'jhonnyuribe',
+'sergeikim',
+'leftrainbow',
+'kesav',
+'prackid',
+'ZEN-22',
+'urutodo',
+'chinesecoronavirus',
+'RedDeath10',
+'nadimifar_adnan',
+'Culum2007',
+'elviejodearriba',
+'rapolas12',
+'acrawford28',
+'Knightonh1',
+'Bole07',
+'oleg322',
+'Valintinian',
+'angelmoises',
+'sargnagel',
+'NormaJean26',
+'yuvalater10',
+'Mateuhslc',
+'Sulthankan',
+'airaang',
+'NATANcruz',
+'Priv93200',
+'svchess00001956',
+'Vulvik',
+'Aldebaran789',
+'RickmasterC',
+'BulletMercenary',
+'bp2004',
+'ivanuraev',
+'AnishOnYoutube',
+'KindaPinkJake',
+'SadisticPanda',
+'Blitzstream',
+'kuli4ik',
+'Firouzja2003',
+'rpragchess',
+'JonahWillow',
+'vnkm',
+'RedbaronCanada',
+'zerxam',
+'BrooklynFreestyle',
+'TanitoluwaAps116',
+'MercurialTwists',
+'GOGIEFF',
+'Armen_Barseghyan',
+'DenLaz',
+'mamey78',
+'GadimbayliA',
+'kakarot_001',
+'Sanan_Sjugirov',
+'Adham_Fawzy',
+'Gannikus21',
+'GMBenjaminBok',
+'babadroga92',
+'chessasuke',
+'Vokhidov11',
+'jinxy2009',
+'irdorath',
+'chipmunknau',
+'Alexander_Moskalenko',
+'Hrant_ChessMood',
+'12teen',
+'mishikomchedlishvili',
+'SantoBlue',
+'Saitago',
+'FrankieJay',
+'Dzej_Double',
+'georgeileana',
+'MJB223',
+'1571Caravaggio',
+'grunbergmihai',
+'AlekCaissa',
+'NguyenDucViet',
+'Fantozzi86',
+'Pakarma',
+'VaheMendelyan',
+'trainingguroms',
+'littleplotkin',
+'Yang_Qindong',
+'RodinMihail',
+'Asztrik',
+'gkbw60',
+'djangoreinhardt',
+'Grandstodge',
+'goldenbeer',
+'Aandrew40',
+'2_year',
+'Da_Kool_Kid',
+'LacoIvan',
+'drfumbles001',
+'stendecc',
+'tejasjyade17',
+]
 
     start_urls=[]
     for i in username_list: # Parses list of usernames above and puts them in the URL
@@ -23,7 +202,8 @@ class ChessSpider2(scrapy.Spider):
 
     def parse(self, response):
 
-            HTML = "[Chess.com]--User-Profile-1.html"
+            # HTML for Debugging
+            HTML = "User-Profile-1.html"
             with open(HTML, 'wb') as h2:
                 h2.write(response.body)
 
@@ -127,7 +307,8 @@ class ChessSpider2(scrapy.Spider):
 
     def stats_page(self, response): # Game stats page
 
-            HTML = "[Chess.com]--User-Profile-2.html"
+            # HTML for Debugging
+            HTML = "User-Profile-2.html"
             with open(HTML, 'wb') as h2:
                 h2.write(response.body)
 
@@ -230,6 +411,7 @@ class ChessSpider2(scrapy.Spider):
             print()
             print(Date_Collected)
             print(Time)
+            print()
             print("========================================================================================================")
             print()
 
