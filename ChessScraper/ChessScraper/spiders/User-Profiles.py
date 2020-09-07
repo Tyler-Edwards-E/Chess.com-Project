@@ -426,7 +426,7 @@ class ChessSpider2(scrapy.Spider):
             'Profile_Views': item['Profile_Views'],
             'Followers': item['Followers'],
             'Points': item['Points'],
-            'Points': item['URL'],
+            'URL': item['URL'],
             'Last_Online': item['Last_Online'],
             'Date_Collected' : Date_Collected,
             'Time_Collected' : Time
