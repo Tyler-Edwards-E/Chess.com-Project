@@ -33,7 +33,7 @@ Everything related to the web scraping and data collection is in the first "Ches
 - [x] Finish user profiles spider
 - [x] Collect list of Chess.com usernames
 - [x] Create spider for user matches
-- [ ] Remake SQL Tables
+- [x] Remake SQL Tables
 - [ ] Data analysis of user profiles and matches datasets
 - [ ] Import the datasets into the database
 - [ ] Write example SQL queries
