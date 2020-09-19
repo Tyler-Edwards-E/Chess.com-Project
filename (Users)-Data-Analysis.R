@@ -27,6 +27,14 @@ CityCount = as.data.frame(table(D$City))
 summary(D$Blitz)
 summary(D$Bullet)
 summary(D$Rapid)
+summary(D$Puzzle.Rush)
+summary(D$Puzzle)
+summary(D$Live.960)
+summary(D$X3.Check)
+summary(D$King.of.the.Hill)
+summary(D$Crazyhouse)
+summary(D$Bughouse)
+
 
 
 
