@@ -36,5 +36,11 @@ summary(D$Crazyhouse)
 summary(D$Bughouse)
 
 
+D.Num = D
+Numeric.Cols = unlist(lapply(D.Num, is.numeric))  
+D.Num = D.Num[, Numeric.Cols]
+
+Cor = cor(D.Num, use = "pairwise.complete.obs")
+
 
 
