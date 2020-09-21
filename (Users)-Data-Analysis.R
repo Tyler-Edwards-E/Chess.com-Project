@@ -42,5 +42,18 @@ D.Num = D.Num[, Numeric.Cols]
 
 Cor = cor(D.Num, use = "pairwise.complete.obs")
 
+# Best Correlations for each format
+# Blitz -> Live960
+# Bullet -> Live960
+# Rapid -> Blitz
+# Puzzle Rush -> Bullet
+# Puzzles -> Live960
+# Daily -> Live960
+# Live960 -> Blitz
+# 3Check -> Live960
+# KOTH -> CrazyHouse
+# Crazyhouse -> KOTH
+# Bughouse -> Bullet
+
 
 
