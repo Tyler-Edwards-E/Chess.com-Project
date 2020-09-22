@@ -8,4 +8,5 @@ str(D) # Checking that all data types are correct
 
 # Difference between rating (White - Black)
 # Analysis showing how much rating influence matches
-
+# Accuracy Difference
+# Logit model

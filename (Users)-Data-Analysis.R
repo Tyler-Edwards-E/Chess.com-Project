@@ -5,6 +5,8 @@
 
 D = read.csv("ChessScraper/[Chess.com]-Users.csv")
 str(D) # Checking that all data types are correct
+D$Date_Joined = as.Date(D$Date_Joined, "%m/%d/%Y") # Earliest accounts from 2007
+D$Date_Collected = as.Date(D$Date_Collected, "%m/%d/%Y")
 
 # *** The list of usernames in this dataset were not collected randomly, so there may be bias in the analysis.
 
@@ -24,17 +26,11 @@ CountryCount = as.data.frame(table(D$Country))
 CityCount = as.data.frame(table(D$City))
 # Moscow has the most, but most users don't have a city listed
 
-summary(D$Blitz)
-summary(D$Bullet)
-summary(D$Rapid)
-summary(D$Puzzle.Rush)
-summary(D$Puzzle)
-summary(D$Live.960)
-summary(D$X3.Check)
-summary(D$King.of.the.Hill)
-summary(D$Crazyhouse)
-summary(D$Bughouse)
+summary(D)
 
+NA.Count = as.data.frame(sapply(D, function(x) sum(is.na(x))))
+colnames(NA.Count) = "NAs"
+# Blitz is the most played format and Crazyhouse is the least played
 
 D.Num = D
 Numeric.Cols = unlist(lapply(D.Num, is.numeric))  
