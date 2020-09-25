@@ -52,4 +52,7 @@ Cor = cor(D.Num, use = "pairwise.complete.obs")
 # Bughouse -> Bullet
 
 
+# Model predicting Blitz rating
+
+
 
