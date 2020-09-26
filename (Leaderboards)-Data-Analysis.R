@@ -10,8 +10,8 @@ str(D) # Checking that all data types are correct
 
 D$Date_of_Birth = as.Date(D$Date_of_Birth, "%b %d, %Y") # Converting DoB to Date
 D$Age = age_calc(D$Date_of_Birth, units = "years") # Adding age column
-D$Avg.Rating = (D$Rapid_Rating + D$Blitz_Rating + D$Classical_Rating) / 3 # Combined measure for ratings
-
+D$Sum.Rating = D$Rapid_Rating + D$Blitz_Rating + D$Classical_Rating
+D$Avg.Rating = D$Sum.Rating / 3 # Combined measure for ratings
 Dummies = model.matrix(~D$Country) # Creating dummies for countries
 # colnames(Dummies) = gsub("\\$", ".", colnames(Dummies)) # Removing $
 
@@ -58,7 +58,10 @@ cor(D$Age, D$Avg.Rating, use = "complete.obs") # -0.067
 cor(D$Age, D$World_Rank, use = "complete.obs") # 0.222
 # World Rank + Avg.Rating
 cor(D$World_Rank, D$Avg.Rating, use = "complete.obs") # -0.588
+# World Rank + Sum.Rating
+cor(D$World_Rank, D$Sum.Rating, use = "complete.obs") # -0.594
 
+par(mfrow=c(2,3))
 
 # Plots of some of the correlations. (Other plots were already done in Tableau)
 plot(D$Rapid_Rating[D$Rapid_Rating > 2000], 
@@ -77,6 +80,10 @@ plot(D$World_Rank, D$Avg.Rating,
      main = "Chess World Rank vs. Avg. Rating (Rapid, Blitz, Classical)",
      xlab = "World Rank", ylab = "Avg. Rating")
 
+plot(D$World_Rank, D$Sum.Rating, 
+     main = "Chess World Rank vs. Sum. Rating (Rapid, Blitz, Classical)",
+     xlab = "World Rank", ylab = "Sum. Rating")
+
 # ---------------------------------------------------------------------------------
 
 # Linear Modeling
@@ -91,7 +98,14 @@ summary(WR.M1) # R = 0.8153, Adjusted = 0.8089
 
 # Same model but ratings replaced with average
 WR.M2 = lm(D$World_Rank ~ D$Avg.Rating + D$Age)
-summary(WR.M2) # R = 0.379, Adjusted = 0.3684
+summary(WR.M2) # R = 0.3815, Adjusted = 0.3712
+# Highly Significant: Intercept, Avg.Rating
+# Significant: Age
+# Not Significant:
+
+# Same model but ratings replaced average with sum
+WR.M5 = lm(D$World_Rank ~ D$Sum.Rating + D$Age)
+summary(WR.M5) # R = 0.3815, Adjusted = 0.3712
 # Highly Significant: Intercept, Avg.Rating
 # Significant: Age
 # Not Significant:
