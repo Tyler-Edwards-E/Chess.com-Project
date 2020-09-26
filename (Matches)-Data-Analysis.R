@@ -22,7 +22,8 @@ par(mfrow=c(3,2))
 hist(D$Moves_Played); hist(D$White_Rating); hist(D$White_Accuracy)
 hist(D$Black_Rating); hist(D$Black_Accuracy)
 
-# Difference between rating (White - Black)
+D$Rating.Dif = D$White_Rating - D$Black_Rating
+D$Accuracy.Dif = D$White_Accuracy - D$Black_Accuracy
+
 # Analysis showing how much rating influence matches
-# Accuracy Difference
 # Logit model
