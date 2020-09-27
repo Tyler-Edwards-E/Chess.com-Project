@@ -25,5 +25,18 @@ hist(D$Black_Rating); hist(D$Black_Accuracy)
 D$Rating.Dif = D$White_Rating - D$Black_Rating
 D$Accuracy.Dif = D$White_Accuracy - D$Black_Accuracy
 
+library(tidyverse)
+D <- D %>% 
+  mutate(Result = recode(Result, 
+                    "WHITE" = "0",
+                    "DRAW" = ".5",
+                    "BLACK" = "1")) %>% 
+  mutate(Result = as.numeric(levels(Result))[Result])
+
+D.WL = D[D$Result != .5,] # Dataframe removing all draws
+
+M1 = glm(Result ~ Rating.Dif + Accuracy.Dif, data = D.WL, family = "binomial")
+summary(M1)
+plot(M1)
 # Analysis showing how much rating influence matches
 # Logit model
