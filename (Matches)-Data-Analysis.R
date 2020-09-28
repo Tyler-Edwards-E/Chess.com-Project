@@ -33,10 +33,48 @@ D <- D %>%
                     "BLACK" = "1")) %>% 
   mutate(Result = as.numeric(levels(Result))[Result])
 
-D.WL = D[D$Result != .5,] # Dataframe removing all draws
+Linear.M1 = lm(Result ~ Rating.Dif, data = D)
+summary(Linear.M1) # R = 0.1081
 
-M1 = glm(Result ~ Rating.Dif + Accuracy.Dif, data = D.WL, family = "binomial")
-summary(M1)
-plot(M1)
-# Analysis showing how much rating influence matches
-# Logit model
+Linear.M2 = lm(Result ~ Accuracy.Dif, data = D)
+summary(Linear.M2) # R = 0.3388
+
+Linear.M3 = lm(Result ~ Rating.Dif + Accuracy.Dif, data = D)
+summary(Linear.M3) # R = 0.3662
+
+# Bothing Rating and Accuracy are significant factors. Accuracy is the better predictors of the two.
+
+D.WL = D[D$Result != .5,] # Dataframe removing all draws so Result is binomial
+
+Logit.M1 = glm(Result ~ Rating.Dif, data = D.WL, family = "binomial")
+summary(Logit.M1) # AIC = 9878.7
+
+Logit.M2 = glm(Result ~ Accuracy.Dif, data = D.WL, family = "binomial")
+summary(Logit.M2) # AIC = 1853.1
+
+Logit.M3 = glm(Result ~ Rating.Dif + Accuracy.Dif, data = D.WL, family = "binomial")
+summary(Logit.M3) # AIC = 1735.5
+
+# Similar conclusion to the linear models, but the Logit model with both factors has the best AIC.
+
+
+########### Analysis to see if ratings trends with accuracy
+
+RA.W = D[,c("White_Rating", "White_Accuracy")]
+RA.B = D[,c("Black_Rating", "Black_Accuracy")]
+colnames(RA.W) = c("Rating", "Accuracy")
+colnames(RA.B) = c("Rating", "Accuracy")
+RA = rbind(RA.W,RA.B)
+
+RA.M1 = lm(RA$Accuracy ~ RA$Rating)
+summary(RA.M1)
+# Rating is significant, but cannont predict the player's acucracy well
+
+par(mfrow=c(1,1))
+plot(RA$Rating, RA$Accuracy)
+# This plot might be an example of how the data is skewed with more high rated players.
+# There aren't many players in the dataset with a rating below 2000
+
+
+
+
