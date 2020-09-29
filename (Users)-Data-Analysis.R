@@ -51,8 +51,22 @@ Cor = cor(D.Num, use = "pairwise.complete.obs")
 # Crazyhouse -> KOTH
 # Bughouse -> Bullet
 
+############## Blitz Modeling 
+NA.Count = as.data.frame(colSums(is.na(D)))
+# Not using columns with > 2500 NAs in the models
 
-# Model predicting Blitz rating
+Blitz.LM1 = lm(D$Blitz ~ D$Bullet + D$Rapid + D$Puzzle.Rush + D$Puzzles + 
+                 D$Daily + D$Live.960)
+summary(Blitz.LM1) # R = 0.9241
+
+# Significant : Bullet, Rapid, Puzzles, Live960
+# Insignificant : Puzzle RUsh, Daily
+
+# It's expected that Bullet and Rapid are significant, but interesting that Puzzles are too.
+
+# Removing insignificant factors
+Blitz.LM2 = lm(D$Blitz ~ D$Bullet + D$Rapid + D$Puzzles + D$Live.960)
+summary(Blitz.LM2) # R = 0.9141
 
 
 
