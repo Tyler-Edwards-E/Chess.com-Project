@@ -15,7 +15,11 @@ Everything related to the web scraping and data collection is in the first "Ches
 
 
 ## DATA ANALYTICS
-**Chess Leaderboards Analysis.R** : Data analysis on the data collected from **Leaderboards.py**.
+**(Leaderboards)-Data-Analysis.R** : Data analysis on the data collected from **Leaderboards.py**.
+
+**(Matches)-Data-Analysis.R** : Data analysis on the data collected from **Matches.py**.
+
+**(Users)-Data-Analysis.R** : Data analysis on the data collected from **Users-Profiles**.
 
 ## DATA VISUALIZATIONS
 **Tableau Visualization** : Folder containing data visuliations made in Tableau of the *"[Chess.com]-Leaderboards.csv"* dataset.
@@ -34,7 +38,7 @@ Everything related to the web scraping and data collection is in the first "Ches
 - [x] Collect list of Chess.com usernames
 - [x] Create spider for user matches
 - [x] Remake SQL Tables
-- [ ] Data analysis of user profiles and matches datasets
+- [x] Data analysis of user profiles and matches datasets
 - [ ] Import the datasets into the database
 - [ ] Write example SQL queries
 
