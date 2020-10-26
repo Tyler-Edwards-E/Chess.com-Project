@@ -10,11 +10,11 @@
 -- predefined type, no DDL - XMLTYPE
 
 CREATE TABLE leaderboards (
-    player_name       VARCHAR2(30 CHAR) NOT NULL,
-    title             CHAR(2 CHAR),
-    country           VARCHAR2(20 CHAR),
-    birthplace        VARCHAR2(30 CHAR),
+    player_name       VARCHAR2(4000) NOT NULL,
+    title             CHAR(3 CHAR),
+    country           VARCHAR2(4000),
     date_of_birth     DATE,
+    birthplace        VARCHAR2(4000),
     world_rank        INTEGER,
     rapid_rating      INTEGER,
     blitz_rating      INTEGER,
