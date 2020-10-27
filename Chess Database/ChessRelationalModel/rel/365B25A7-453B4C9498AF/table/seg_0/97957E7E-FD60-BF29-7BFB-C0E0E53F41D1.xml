@@ -1,0 +1,235 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97957E7E-FD60-BF29-7BFB-C0E0E53F41D1" name="MATCHES">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:27:42 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MatchID" id="D7A7FD5A-7D3C-3E2C-6CB9-746E748B10CC">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Format" id="049F6369-8DA2-A6CA-00A7-D3126487255B">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Moves" id="2366DC43-56FD-04E1-390A-DF280EE92FC3">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Result" id="F621B536-E313-02F7-00CE-F17916366A94">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="White_Title" id="EF5F9A34-D0EB-6642-DEB6-1B8A0E787933">
+<createdBy>Ty</createdBy>
+<createdTime>2020-10-26 21:45:05 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="White_Player" id="7E67E4FC-34F6-641D-CCF6-8F8E61C92BD5">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>4000 CHAR</dataTypeSize>
+<ownDataTypeParameters>4000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9FD99572-46E7-C37E-13C2-CEB0435860E2" referredColumn="066008FA-5141-4C65-116C-975B953C5E56"/>
+</associations>
+</Column>
+<Column name="White_Rating" id="D688E383-4D35-CE2E-6F30-DCDC015BD781">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:58:58 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="White_Accuracy" id="73EEEAC4-88F7-D75E-4C88-77CDCB1E1057">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="White_Country" id="040F9D8A-0CFB-B03F-F35C-ABEC32890754">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Black_Title" id="DC44DAB2-FC41-7E0B-E100-82538095D177">
+<createdBy>Ty</createdBy>
+<createdTime>2020-10-26 21:45:05 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Black_Player" id="BB8DB496-5504-F742-003D-0073136D25CD">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>4000 CHAR</dataTypeSize>
+<ownDataTypeParameters>4000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C79A4A30-0353-86E4-24F0-4E680FD00A53" referredColumn="066008FA-5141-4C65-116C-975B953C5E56"/>
+</associations>
+</Column>
+<Column name="Black_Rating" id="89969638-F11A-ED74-469C-A1A7E5DB86A4">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:59:59 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Black_Accuracy" id="12D98476-86F2-44E7-33F6-0053F14B6850">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Black_Country" id="A784B9C9-5BA5-5EEA-4E57-6359412B86B0">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_Played" id="0DBDBFFF-D204-1CDA-6D7A-175F1683D980">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_Collected" id="B3C90F5F-6519-476B-667A-F18E54B0F57F">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:37:08 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Time" id="83EC9F1E-2ADC-338B-F7AC-C8D30935F8E9">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:37:18 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="86F65FB0-CE25-456F-5F2F-489B99D602E2" name="MATCHES_PK">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:40:46 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7A7FD5A-7D3C-3E2C-6CB9-746E748B10CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1044EDBC-F4FC-C038-8803-85B7E50AF5F5" name="MATCHES_PLAYERS_FK">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:54:22 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E67E4FC-34F6-641D-CCF6-8F8E61C92BD5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB3D18D2-58B3-8B61-851F-A042B5F4B50E" name="MATCHES_PLAYERS_FKv2">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:55:06 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB8DB496-5504-F742-003D-0073136D25CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

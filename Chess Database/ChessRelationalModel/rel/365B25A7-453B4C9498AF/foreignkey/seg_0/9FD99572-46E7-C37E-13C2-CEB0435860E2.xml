@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9FD99572-46E7-C37E-13C2-CEB0435860E2" containerWithKeyObject="97957E7E-FD60-BF29-7BFB-C0E0E53F41D1" localFKIndex="1044EDBC-F4FC-C038-8803-85B7E50AF5F5" name="MATCHES_PLAYERS_FK">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:54:22 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<referredTableLongName>PLAYERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>97AF8132-7B47-8269-0F72-7023A7F4D39D</referredTableID>
+<keyObject>AD0FD587-B331-3C89-D457-6C21606DFC59</keyObject>
+<referredKeyID>AD0FD587-B331-3C89-D457-6C21606DFC59</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Username</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

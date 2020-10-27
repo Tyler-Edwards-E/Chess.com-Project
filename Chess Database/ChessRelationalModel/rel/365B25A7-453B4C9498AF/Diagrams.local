@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="C28D186C-0E59-2E1E-5F73-76B5855074D3" name="Chess.com Relational Model" visible="true"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

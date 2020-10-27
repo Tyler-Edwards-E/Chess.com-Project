@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92574166-66A4-2B1A-8995-033EAF00BA36" name="LEADERBOARDS">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:07:49 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Player_Name" id="37758E67-0875-7A12-5B2E-9DAFE3A40051">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Title" id="AD19C74F-3DF2-D801-99D7-6526F6956023">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Country" id="51E86E32-0E1F-F0CD-9793-F15DC68144A7">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_of_Birth" id="0C7A633F-A0CF-1DA1-B838-8AD5C45A4C40">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Birthplace" id="1CD28B16-D704-43DF-2AAB-629D9C34450F">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:10:58 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="World_Rank" id="3A082645-5AC4-0393-E47A-FE01ADF25A53">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rapid_Rating" id="36D12B5C-9E76-9303-1054-95724E9FA56E">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:11 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Blitz_Rating" id="4DB7EC72-01DA-8F6D-A3D7-56251F293AA0">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:35 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Classical_Rating" id="56FA7858-961B-0D24-210A-209AD364D3AF">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:35 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Retired" id="4C328115-0C80-334A-B35F-223EE5334A39">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:35 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_Collected" id="728EA80D-CBA3-36F2-A16C-5F004741B037">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:09:35 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="44598D7A-48E4-DD73-20DF-2A447F835687" name="LEADERBOARDS_PK">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:10:12 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37758E67-0875-7A12-5B2E-9DAFE3A40051"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

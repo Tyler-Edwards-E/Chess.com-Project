@@ -1,0 +1,308 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="97AF8132-7B47-8269-0F72-7023A7F4D39D" name="PLAYERS">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:48:44 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Username" id="066008FA-5141-4C65-116C-975B953C5E56">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Legal_Name" id="41AB0272-E035-948C-13C6-48B3A56C8913">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Title" id="CA63A780-0B60-719A-493D-21827F1DF55B">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Diamond_Member" id="EAAA7CB1-1AB2-7D69-7CDB-FBF242EA039C">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:31:35 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+<ownDataTypeParameters>1 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Country" id="E6571366-475E-871D-A463-D78B506B0FCE">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="City" id="B191609D-1807-0BF8-28C7-52B79C195DD3">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_Joined" id="2F4B3C18-1285-8C79-ED6B-E0A20F9FD781">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Profile_Views" id="9EE75E30-7655-D106-E8D0-A072078D0FAE">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Followers" id="F4CEA6E9-4256-85BD-1B5E-0306A5AD1AE2">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 01:51:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Points" id="7555BE55-5982-8775-BE5B-C5F2585570A0">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:06:18 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Blitz" id="2DA9080F-6060-97C8-6666-AD9777382700">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bullet" id="2684C598-722A-66D9-FD64-4A0FA543EC75">
+<createdBy>Ty</createdBy>
+<createdTime>2020-10-25 04:31:15 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Rapid" id="6BDCD4EF-08E4-F783-2BA4-955E03CDC001">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Puzzle_Rush" id="7DA0CE18-78C6-BF34-9994-773420DF6BFB">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Puzzles" id="0CD5CF95-E9E3-0821-2DDF-B0D5F08FD412">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:13:43 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Daily_960" id="ED89599D-C4B2-8861-08B7-3D6344F19E3E">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Daily" id="A0497A98-2439-454E-F665-54337A56B441">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Live_960" id="0F2739F6-D8CF-5802-2111-600558621FA5">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="3Check" id="CF097775-0466-69DC-F122-5E199F50CF9A">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="KotH" id="0496D640-DF70-7B80-033E-B3F739D09680">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Crazyhouse" id="CA889777-8DD5-AB6A-22A6-37515E4F188F">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Bughouse" id="BF04ADDE-C2EB-BEF2-EB66-BA821FFA54F7">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:10:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="URL" id="2A1BDAE1-3258-A933-4D2B-E0DAD4156745">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:31:52 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Last_Online" id="6652478A-C6F7-DC2D-5752-0EA480B96267">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:36:10 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Date_Collected" id="41D2F4F8-3043-5FAD-4798-4F43732BA668">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:36:10 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Time_Collected" id="1CBB1B5C-5C0F-D745-FBF9-126E0F62F151">
+<createdBy>Ty</createdBy>
+<createdTime>2020-09-08 19:36:10 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AD0FD587-B331-3C89-D457-6C21606DFC59" name="Players_PK">
+<createdBy>Ty</createdBy>
+<createdTime>2020-08-04 02:01:06 UTC</createdTime>
+<ownerDesignName>ChessRelationalModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="066008FA-5141-4C65-116C-975B953C5E56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
