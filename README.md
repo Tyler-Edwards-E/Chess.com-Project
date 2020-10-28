@@ -40,5 +40,5 @@ Everything related to the web scraping and data collection is in the first "Ches
 - [x] Remake SQL Tables
 - [x] Data analysis of user profiles and matches datasets
 - [x] Import the datasets into the database
-- [ ] Write example SQL queries
+- [x] Write example SQL queries
 
