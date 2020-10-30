@@ -24,12 +24,17 @@ Everything related to the web scraping and data collection is in the first "Ches
 ## DATA VISUALIZATIONS
 **Tableau Visualization** : Folder containing data visuliations made in Tableau of the *"[Chess.com]-Leaderboards.csv"* dataset.
 
+**Chess Leaderboards Visualizations.twb** : Tableau workbook where the visulizations were made.
+
 ## RELATIONAL DATABASES
-**ChessRelationalModel.dmd** : Relational model of a small Chess.com user database made in Oracle Data Modeler.
+**ChessRelationalModel.dmd** : Relational model of a small Chess.com user database made in Oracle Data Modeler. Needs to be in the same folder as the "**ChessRelationalModel.dmd**.
 
 **ChessRelationalModel.png** : Image of **ChessRelationalModel.dmd**.
 
-**ChessTableGeneration.ddl** : SQL tables generated from **ChessRelationalModel.dmd**.
+**ChessTableGeneration.sql** : SQL tables generated from **ChessRelationalModel.dmd**.
+
+**Example SQL Queries.sql** : Examples SQL queries using the generated tables.
+
 
 -----------------------------------------------------------------------
 
